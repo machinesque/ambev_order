@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: ambev_order
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/orderdb
+    username: postgres
+    password: postgres
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  jackson:
+    default-property-inclusion: non-null
+    serialization:
+      write-dates-as-timestamps: false
+    time-zone: America/Sao_Paulo
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+server:
+  port: 8080
