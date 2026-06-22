@@ -6,6 +6,10 @@ spring:
     url: jdbc:postgresql://localhost:5432/orderdb
     username: postgres
     password: postgres
+    
+    hikari:
+      maximum-pool-size: 30
+      minimum-idle: 10
 
   jpa:
     hibernate:
@@ -19,6 +23,13 @@ spring:
 
   kafka:
     bootstrap-servers: localhost:9092
+
+  threads:
+    virtual:
+      enabled: true
+
+  flyway:
+    enabled: true
 
 server:
   port: 8080

@@ -1,6 +1,7 @@
 package br.com.ambev_order.kafka.messaging;
 
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import br.com.ambev_order.domain.dtos.OrderEventoProcessadoDTO;
@@ -13,6 +14,7 @@ public class OrderEventPublisher {
 
 	private final KafkaTemplate<String, Object> kafkaTemplate;
 
+	@Async
     public void publish(OrderEventoProcessadoDTO orderEvento) {
 
         kafkaTemplate.send(
