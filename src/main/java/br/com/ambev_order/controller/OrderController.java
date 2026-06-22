@@ -30,6 +30,13 @@ public class OrderController {
                 
     }
 	
+	public BigDecimal calcularOrderValorTotal(List<OrderItem> items) {
+
+        return items.stream()
+                .map(OrderItem::getPrecoTotal)
+                .reduce(BigDecimal.ZERO, BigDecimal::add);
+    }
+	
 	public Order montarOrder(OrderRequestDTO newOrder) {
 
         Order order = new Order();

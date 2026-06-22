@@ -49,7 +49,7 @@ public class OrderServiceImpl implements OrderService {
 
         Order order = orderController.montarOrder(newOrder);
 
-        BigDecimal valorTotal = orderController.calcularPrecoTotal(order.getItems());
+        BigDecimal valorTotal = orderController.calcularOrderValorTotal(order.getItems());
 
         order.setValorTotal(valorTotal);
         order.setStatus(EnumOrderStatus.PROCESSADO);
